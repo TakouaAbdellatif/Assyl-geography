@@ -34,7 +34,7 @@ class Answer(BaseModel):
     superficie: str = Field(description="Donne la superficie du pays indiqué.")
     histoire: str = Field(description="Donne deux évéènements historiques très marquants de ce pays.")
     cuisine: str = Field(description="Donne les plats les plus connus de ce pays.")
-    anecdote str = Field(description="Donne une anecdote sympatique sur ce pays.")
+    anecdote: str = Field(description="Donne une anecdote sympatique sur ce pays.")
     
 
 parser = JsonOutputParser(pydantic_object=Answer)
