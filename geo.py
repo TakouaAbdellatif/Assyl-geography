@@ -42,7 +42,7 @@ format_instructions = parser.get_format_instructions()
 
 template_with_memory = ChatPromptTemplate.from_messages([
     ("system", "Tu es un géographe et historien très passionné par la géographie et l'histoire des pays."), 
-    ("human", "Donne des réponses courtes dans un langage simple."), 
+    ("human", "Donne des réponses dans un langage simple."), 
     ("human", (
         "Donne des informations sur le pays indiqué selon les formats d'instructions.\n" +
         "Format instructions {format_instructions}")
@@ -50,7 +50,7 @@ template_with_memory = ChatPromptTemplate.from_messages([
     ('placeholder', '{chat_conversation}')
 ])
 
-output_parser = RunnableLambda(lambda resp: f"population : {resp['population']}\n superficie: {resp['superficie']} \n histoire: {resp['histoire']} \n cuisine: {resp['cuisine']} " )
+output_parser = RunnableLambda(lambda resp: f"population : {resp['population']}\n superficie: {resp['superficie']} \n histoire: {resp['histoire']} \n cuisine: {resp['cuisine']} \n anecdote: {resp['anecdote']} " )
 
 # ChatBot creation
 class Chatbot:
